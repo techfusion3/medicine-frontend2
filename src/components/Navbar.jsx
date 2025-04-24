@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <Box sx={{ position: 'relative', padding: 2, backgroundColor: '#1976d2', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <Box sx={{ position: 'relative', padding: 2, backgroundColor: '#1976d2', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <Typography variant="h6" color="white">
         Medical Reminder App
       </Typography>
