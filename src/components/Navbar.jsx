@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <Box sx={{ position: 'relative', padding: 2, backgroundColor: '#1976d2', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <Box sx={{ position: 'relative', padding: 2, backgroundColor: '#1976d2', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <Typography variant="h6" color="white">
         Medical Reminder App
       </Typography>
@@ -45,13 +45,8 @@ const Navbar = () => {
             }}
           >
             <Link to="/login" style={{ textDecoration: 'none' }}>
-              <Button variant="contained" color="primary" fullWidth>
-                Login
-              </Button>
-            </Link>
-            <Link to="/register" style={{ textDecoration: 'none' }}>
               <Button variant="contained" color="secondary" fullWidth>
-                Register
+                Login
               </Button>
             </Link>
           </Box>
