@@ -81,9 +81,9 @@ export default function Home() {
     <Box display="flex" flexDirection="column" alignItems="center" mt={5}>
       <Typography variant="h4" gutterBottom>Welcome to Medical Reminder App</Typography>
 
-      <Button variant="contained" color="secondary" onClick={handleLogout}>
+{/*       <Button variant="contained" color="secondary" onClick={handleLogout}>
         Logout
-      </Button>
+      </Button> */}
 
       {token && user && (
         <Box mt={4}>
