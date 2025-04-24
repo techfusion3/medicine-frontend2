@@ -41,7 +41,7 @@ const Navbar = () => {
               gap: 1.5,
               position: 'absolute',
               top: 12,
-              right: 12,
+              right: 9,
             }}
           >
             <Link to="/login" style={{ textDecoration: 'none' }}>
