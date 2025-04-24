@@ -6,43 +6,43 @@ import Home from './Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Logout from './pages/Logout';
-import { requestNotificationPermission, showNotification } from './notifications';
-import axios from 'axios';
+// import { requestNotificationPermission, showNotification } from './notifications';
+// import axios from 'axios';
 
 const App = () => {
-  const [notificationGranted, setNotificationGranted] = useState(false);
+  // const [notificationGranted, setNotificationGranted] = useState(false);
 
-  useEffect(() => {
-    const requestPermissionsAndRegisterSW = async () => {
-      await requestNotificationPermission();
+  // useEffect(() => {
+    // const requestPermissionsAndRegisterSW = async () => {
+    //   await requestNotificationPermission();
 
-      if (Notification.permission === 'granted') {
-        setNotificationGranted(true);
+    //   if (Notification.permission === 'granted') {
+    //     setNotificationGranted(true);
 
-        // Register service worker
-        if ('serviceWorker' in navigator && 'PushManager' in window) {
-          try {
-            const reg = await navigator.serviceWorker.register('/sw.js');
-            console.log('[✔️ Service Worker Registered]', reg);
-          } catch (err) {
-            console.error('[❌ Service Worker Registration Failed]', err);
-          }
-        }
-      }
-    };
+    //     // Register service worker
+    //     if ('serviceWorker' in navigator && 'PushManager' in window) {
+    //       try {
+    //         const reg = await navigator.serviceWorker.register('/sw.js');
+    //         console.log('[✔️ Service Worker Registered]', reg);
+    //       } catch (err) {
+    //         console.error('[❌ Service Worker Registration Failed]', err);
+    //       }
+    //     }
+  //     }
+  //   };
 
-    requestPermissionsAndRegisterSW();
-  }, []);
+  //   requestPermissionsAndRegisterSW();
+  // }, []);
 
-  useEffect(() => {
-    if (notificationGranted) {
-      showNotification('Welcome to the Smart Medicine Reminder!', {
-        body: 'You have reminders set for today.',
-        icon: '/icons/medicine-icon.jpg',
-        badge: '/icons/medicine-badge.jpg',
-      });
-    }
-  }, [notificationGranted]);
+  // useEffect(() => {
+  //   if (notificationGranted) {
+  //     showNotification('Welcome to the Smart Medicine Reminder!', {
+  //       body: 'You have reminders set for today.',
+  //       icon: '/icons/medicine-icon.jpg',
+  //       badge: '/icons/medicine-badge.jpg',
+  //     });
+  //   }
+  // }, [notificationGranted]);
 
   return (
     <UserProvider>  {/* Wrap your app with UserProvider */}
