@@ -71,6 +71,14 @@ const handleLogin = async (e) => {
         <Button type="submit" variant="contained" fullWidth>
           Login
         </Button>
+        <Box sx={{ mt: 2, textAlign: 'center' }}>
+          <Typography variant="body2">
+            Don&apos;t have an account?{' '}
+            <Link to="/register" style={{ textDecoration: 'none', color: '#1976d2', fontWeight: 500 }}>
+              Create new account
+            </Link>
+          </Typography>
+        </Box>
       </form>
     </Box>
   );
