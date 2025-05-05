@@ -68,8 +68,7 @@ const handleLogin = async (e) => {
           margin="normal"
           required
         />
-        <Button type="submit" variant="contained" fullWidth disabled={loading}>
-            {loading ? <CircularProgress size={24} /> : "Login"}
+        <Button type="submit" variant="contained" fullWidth >
           Login
         </Button>
         <Box sx={{ mt: 2, textAlign: 'center' }}>
