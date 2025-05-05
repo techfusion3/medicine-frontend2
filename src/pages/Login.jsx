@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Button, Box, Typography } from '@mui/material';
+import { TextField, Button, Box, Typography, CircularProgress } from '@mui/material';
 import { useNavigate, Link } from 'react-router-dom';
 import { useUser } from '../context/UserContext'; // Import the useUser hook
 
@@ -9,9 +9,11 @@ const Login = () => {
   const [error, setError] = useState('');
   const { login } = useUser(); // Access the login function from the context
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
 const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
     
     try {
       const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/login`, {
@@ -36,6 +38,8 @@ const handleLogin = async (e) => {
     } catch (err) {
       console.error(err);
       setError('An error occurred. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
   
@@ -68,8 +72,8 @@ const handleLogin = async (e) => {
           margin="normal"
           required
         />
-        <Button type="submit" variant="contained" fullWidth >
-          Login
+        <Button type="submit" variant="contained" fullWidth disabled={loading}>
+          {loading ? <CircularProgress size={24} /> : "Login"}
         </Button>
         <Box sx={{ mt: 2, textAlign: 'center' }}>
           <Typography variant="body2">
